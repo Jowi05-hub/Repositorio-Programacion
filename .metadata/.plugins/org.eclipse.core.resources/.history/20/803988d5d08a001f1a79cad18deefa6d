@@ -1,0 +1,83 @@
+package main;
+
+import java.util.Scanner;
+
+public class ejercicio4Programacion {
+
+	public static void main(String[] args) {
+		
+			
+			ejercicio5('a');
+
+	}
+	/*Escribe una función que reciba dos enteros como parámetros y muestre todos los números comprendidos entre ellos.*/	
+	 public static void ejercicio1(int num, int num2) {
+		 for(int i=num;num2>=num;i++) {
+			 System.out.println(i);
+			 num++;
+		 }
+	 }
+	 /* Escribe una función que reciba tres enteros como parámetros y muestre todos los números pares comprendidos entre 
+	  * el primero y el segundo y todos los múltiplos de tres comprendidos entre el segundo y el tercero*/
+	 public static void ejercicio2(int num1, int num2,int num3) {
+		 for(int i=num1;i<num2;i++) {
+			 if(i%2==0) {
+				 System.out.println(i);
+				 num1++;
+			 }
+		 }
+		 for(int j=num2;j<num3;j++) {
+			 if(j%3==0) {
+				 System.out.println(j);
+				 num2++;
+			 }
+		 }
+	 }
+	 /*Realiza una función que calcule y devuelva el volumen de un cilindro. Dicha función tendrá como parámetros de entrada 
+	  * el radio y la altura de éste. Debe trabajar con valores decimales*/
+	 public static double ejercicio3(double radio,double altura) {
+		 double volumen=Math.PI*Math.pow(radio, 2)*altura;
+		 System.out.println(volumen);
+		 return volumen;
+	 }
+	/* Diseña una función que reciba como parámetro dos números enteros y devuelva el máximo de ambos.*/ 
+	 public static int ejercicio4(int num1,int num2) {
+		 int maximo=Math.max(num1, num2);
+		 System.out.println(maximo);
+		 return maximo;
+	 }
+	 /*Crea una función que indique si la letra pasada como parámetro es una vocal (puede ser mayúscula o minúscula). 
+	  * Devolverá true en caso afirmativo y false en caso contrario.*/
+	 public static boolean ejercicio5(char letra) {
+		 boolean vocal;
+		 if(letra=='a'&&letra=='e'&&letra=='i'&&letra=='o'&&letra=='u'&&letra=='A'&&letra=='E'&&letra=='I'&&letra=='O'&&letra=='U') {
+			  vocal=true;
+			  System.out.println("La letra introducida es una vocal");
+			 
+		 }else {
+			 vocal=false;
+			 System.out.println("La letra introducida no es una vocal");
+		 }
+		 return vocal;
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 //privacidad (private, protected, nada, public)
+	 public static int funcionSuma(int a,int b) {
+		 
+		 return a+b;
+	 }
+	 public static int funcionX(String cadena) {
+		 return cadena.length();
+	 }
+	 	
+}
+

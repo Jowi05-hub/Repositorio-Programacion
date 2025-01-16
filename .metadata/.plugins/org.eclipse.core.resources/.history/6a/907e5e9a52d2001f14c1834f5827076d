@@ -1,0 +1,11 @@
+package calsesObjetos;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Calendario Calendario1=new Calendario(31,3,2005);
+		Calendario Calendario2=new Calendario(25,8,2010);
+		Calendario1.equals(Calendario1);
+	}
+
+}

@@ -1,0 +1,14 @@
+package calsesObjetos;
+
+import java.time.LocalDate;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Calendario Calendario1=new Calendario(2005,3,31);
+		Calendario Calendario2=new Calendario(2005,3,31);
+		localDate otraFecha=LocalDate.of(2005, 3, 31);
+		System.out.println(Calendario2.equals(2005));
+	}
+
+}

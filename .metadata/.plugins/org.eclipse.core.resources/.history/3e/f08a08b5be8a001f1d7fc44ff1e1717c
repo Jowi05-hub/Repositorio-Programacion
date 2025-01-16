@@ -1,0 +1,286 @@
+package main;
+
+import java.util.Random;
+import java.util.Scanner;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+public class ejercicio3Programacion {
+
+	public static void main(String[] args) {
+		 ejercicio11();
+
+	}
+	/*Diseñar un programa que, por cada número introducido por teclado diga si es par o impar, 
+	 * positivo o negativo y su cuadrado. El proceso se ha de repetir hasta que el número introducido sea 0.
+	 *  En ese caso el programa terminará.*/
+	public static void ejercicio1() {
+		System.out.println("Escribe un número");
+		Scanner teclado=new Scanner(System.in);
+		int num1=teclado.nextInt();
+		while(num1!=0){
+			System.out.println("Escribe un número");
+			num1=teclado.nextInt();
+			if(num1==0) {
+				break;
+			}
+			else{
+				if(num1%2==0) {
+					System.out.println("El numero introducido es par");
+				}
+				else {
+					System.out.println("El número introducido es impar");
+				}
+				if(num1>=0) {
+					System.out.println("El número es positivo");
+				}
+				else {
+					System.out.println("El número es negativo");
+				}
+				double cuadrado=Math.pow(num1, 2);
+				System.out.println("El cuadrado del número es: "+cuadrado);
+			}
+		}
+		}
+	/*Implementar una aplicación para calcular datos estadísticos de las edades de los alumnos de un centro educativo.
+	 *  Se introducirán datos hasta que uno de ellos sea negativo y se mostrarán los siguientes datos: 
+	 *  suma de todas las edades introducidas, la media, el número de alumnos y cuántos son mayores de edad*/
+	public static void ejercicio2() {
+		System.out.println("Introduce la edad de un alumno");
+		Scanner teclado=new Scanner(System.in);
+		int edad=teclado.nextInt();
+		int sumatorio=0;
+		int casos=0;
+		int mayor=0;
+		while(edad>=0) {
+			System.out.println("Introduce la edad de un alumno:");
+			Scanner teclado1=new Scanner(System.in);
+			edad=teclado1.nextInt();
+			if (edad>=0) {	
+				sumatorio+=edad;
+				casos++;
+				if(edad>=18) {
+					mayor++;
+				}
+			}
+			else {
+				double media=sumatorio/casos;
+				System.out.println("la suma de las edades es: "+sumatorio+", la media es: "+media+" y los alumnos son: "+casos+" y son mayores: "+mayor);
+				break;
+			}
+		}
+		
+	}
+	/*Codificar el juego “el número secreto”, el cual consiste en acertar un número entre 1 y 100 (generado aleatoriamente). 
+	 * Para ello se introduce por teclado una serie de números, para los que se indica “mayor” o “menor”, según sea mayor o
+	 *  menor que el número secreto. El proceso acierta cuando el usuario acierta o se rinde 
+	 *  (en ese último caso debe introducir un -1 para salir).*/
+	public static void ejercicio3() {
+		System.out.println("Introduce un número:");
+		Scanner teclado=new Scanner(System.in);
+		int num=teclado.nextInt();
+		Random aleatorio=new Random();
+		int numA=aleatorio.nextInt(100);
+		while(num!=-1) {
+			System.out.println("Introduce un número:");
+			Scanner teclado1=new Scanner(System.in);
+			num=teclado1.nextInt();
+			if (num==-1) {
+				break;
+			}
+			if(num==numA) {
+				System.out.println("Has acertado el número oculto");
+			}
+			else {
+				System.out.println("sigue itentandolo");
+			}
+			
+		}
+		
+	}
+	/*Un centro de investigación de la flora urbana necesita una aplicación que muestre cuál es el árbol más alto. 
+	 * Para ello, se introduce por teclado la altura de cada árbol en centímetros. 
+	 * Los árboles se identifican mediante etiquetas con números únicos, correlativos, empezando en 0. 
+	 * El programa terminará cuando el usuario introduzca -1 y mostrará entonces cuál es el árbol más alto (el 0, el 1...etcétera)*/
+	public static void ejercicio4() {
+		int numArbol=-1;
+		System.out.println("Introduce una altura");
+		Scanner teclado=new Scanner(System.in);
+		int alturaLeida=teclado.nextInt();
+		int alturaMaxima=0;
+		int suma=0;
+		while(alturaLeida!=-1) {
+			if(alturaLeida>=alturaMaxima) {
+				alturaMaxima=alturaLeida;
+			numArbol++;
+				suma+=alturaLeida;
+
+			}
+			System.out.println("Introduce una altura");
+			teclado=new Scanner(System.in);
+			alturaLeida=teclado.nextInt();
+	}
+		System.out.println("el arbol más alto mide "+alturaMaxima+"m");
+		System.out.println("el total de las alturas es "+suma);
+} 
+	/*Desarrollar un juego que ayude a mejorar el cálculo mental de la suma. El jugador tendrá que introducir la
+	 *  solución de la suma de dos números aleatorios comprendidos entre el 1 y el 100. 
+	 *  Mientras la solución introducida sea correcta, el juego continuará. En caso contrario, el juego terminará y 
+	 *  mostrará cuántas operaciones ha desarrollado el usuario correctamente.
+*/
+	public static void ejercicio5() {
+		Random aleatorio=new Random();
+		Scanner teclado=new Scanner(System.in);
+		int random1=aleatorio.nextInt(1,100);
+		int random2=aleatorio.nextInt(1,100);
+		int resultado=random1+random2;
+		System.out.println("Resuelve la suma:"+random1+"+"+random2);
+		System.out.println("Escribe el resultado que sea: ");
+		int resultadoU=teclado.nextInt();
+		int sumas=0;
+			while(resultadoU==resultado){
+				sumas++;
+				int random=aleatorio.nextInt(1,100);
+				int random11=aleatorio.nextInt(1,100);
+				System.out.println("Resuelve la suma:"+random+"+"+random11);
+				System.out.println("Escribe el resultado que sea: ");
+				resultadoU=teclado.nextInt();
+				resultado=random+random11;
+			}
+		
+			System.out.println("has respondido bien: "+sumas);
+		}
+	/*Diseña una aplicación que imprima por pantalla todos números menores de 100 que sean simultáneamente múltiplos de 2 y de 3
+	 *  pero que no sean múltiplos de 8*/
+	public static void ejercicio6() {
+		for(int i=0;i<100;i++) {
+			if(i%2==0&&i%3==0&&i%8!=0) {
+				System.out.println("el número es"+i+" ");
+				
+			}
+		}
+	}
+	/*Diseña una aplicación que escriba todos los múltiplos de 7 menores que 100.*/
+	public static void ejercicio7() {
+	for(int i=0;i<100;i++) {
+		if(i%7==0) {
+			System.out.println("el número es"+i+" ");
+			
+		}
+	}
+	}
+	/*Crea una aplicación que pida un número por teclado y muestre su factorial. 
+	 * Recordatorio: el factorial de 5 se escribe 5!=5*4*3*2*1=120. En general, n!=n*(n-1)*...*1*/
+	public static void ejercicio8() {
+		System.out.println("Introduce un número");
+		Scanner teclado=new Scanner(System.in);
+		int num=teclado.nextInt();
+		int suma=0;
+		for(int i=0;i<num;i++) {
+			int factorial=num*(num-i);
+			suma=factorial;
+			System.out.println("el factorial del número es "+factorial);
+		}
+	}
+	/*Dadas 6 notas que se introducen por teclado, entre 0 y 10 y que pueden contener decimales,
+	 *indica cuántos suspensos (0-4.9), aprobados(5.0-6.9), notables (7.0-8.9) y sobresalientes (9.0-10) hay.
+	 *Imprime además la nota media.*/
+	public static void ejercicio9() {
+		Scanner teclado=new Scanner(System.in);
+		System.out.println("escribe un número");
+		double num=teclado.nextDouble();
+		int suspenso=0;
+		int aprobados=0;
+		int notables=0;
+		int sobresaliente=0;
+		for(int i=0;i<5;i++) {
+			if(num<5&&num>0) {
+				suspenso++;
+			}
+			if(num<7&&num>4.99) {
+				aprobados++;
+			}
+			if(num<9&&num>6.99) {
+				notables++;
+			}
+			if(num<11&&num>8.99) {
+				sobresaliente++;
+			}
+			System.out.println("escribe un número");
+			num=teclado.nextDouble();
+		}
+		System.out.println("Hay: "+suspenso+" suspensos, "+aprobados+" aprobados, "+notables+" notables, "+sobresaliente+" sobresalientes");
+		
+	}
+	/*Realiza un programa que convierta un número decimal a binario. Dado que aún no tenemos las herramientas necesarias 
+	 * para hacerlo correctamente, simplemente imprime las cifras del número binario por pantalla en orden inverso*/
+	public static void ejercicio10() {
+		Scanner teclado=new Scanner(System.in);
+		System.out.println("Introduce un número para pasarlo a binario");
+		int num=teclado.nextInt();
+		int resultado=0;
+		while(num>0) {
+			resultado=num/2;
+			if(resultado%2==0) {
+				System.out.println("0");
+			}else {
+				System.out.println("1");
+			}
+			num/=2;
+		}
+	}
+	/*Escribe un programa que nos pida un número entero n y nos diga cuántos números primos hay entre 1 y n. 
+	 *Recordatorio: un número k es primo si solo es divisible entre 1 y k.*/
+	public static void ejercicio11() {
+		Scanner teclado=new Scanner(System.in);
+		System.out.println("Introduce un número");
+		int num=teclado.nextInt();
+		int primos=0;
+		boolean primo;
+		for(int i=2;i<=num;i++) {
+			primo=true;
+			for(int j=2;j<i;j++) {
+				if(i%j==0) {
+					primo=false;
+					break;
+				}
+			}
+			if(primo) {
+				System.out.println("El número "+i+" es primo");
+			}
+		}
+		
+		System.out.println("hay "+primos);
+	}
+	/*Solicita al usuario un número n y dibuja un triángulo de base y altura n. Ejemplo, para n=4:
+   *
+  * *
+ * * * 
+* * * *
+*/
+	public static void ejercicio12() {
+		Scanner teclado=new Scanner(System.in);
+		System.out.println("Introduce la base y altura que quieras para la forma");
+		int n=teclado.nextInt();
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<=i;i++) {
+				System.out.print(" ");
+			}	
+			for(int j=0;j<n+i;j--) {
+				System.out.print("* ");
+			}
+			System.out.println("");
+			
+		}
+	}
+
+		
+}
+
+
+		
+	
+
+
+
+

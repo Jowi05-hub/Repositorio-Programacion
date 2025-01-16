@@ -1,0 +1,47 @@
+package main;
+
+import java.util.Scanner;
+
+public class ejercicio4Programacion {
+
+	public static void main(String[] args) {
+		
+			
+			ejercicio2(3,20,50);
+
+	}
+	/*Escribe una función que reciba dos enteros como parámetros y muestre todos los números comprendidos entre ellos.*/	
+	 public static void ejercicio1(int num, int num2) {
+		// Scanner teclado=new Scanner(System.in);
+		//int num=teclado.nextInt();
+		//int num2=teclado.nextInt();
+		 for(int i=num;num2>=num;i++) {
+			 System.out.println(i);
+			 num++;
+		 }
+	 }
+	 /* Escribe una función que reciba tres enteros como parámetros y muestre todos los números pares comprendidos entre 
+	  * el primero y el segundo y todos los múltiplos de tres comprendidos entre el segundo y el tercero*/
+	 public static void ejercicio2(int num1, int num2,int num3) {
+		 for(int i=num1;num1<num2;i++) {
+			 if(i%2==0) {
+				 System.out.println(i);
+			 }
+		 }
+		 for(int j=num2;num2<num3;j++) {
+			 if(j%3==0) {
+				 System.out.println(j);
+			 }
+		 }
+	 }
+ 
+	 //privacidad (private, protected, nada, public)
+	 public static int funcionSuma(int a,int b) {
+		 
+		 return a+b;
+	 }
+	 public static int funcionX(String cadena) {
+		 return cadena.length();
+	 }
+}
+

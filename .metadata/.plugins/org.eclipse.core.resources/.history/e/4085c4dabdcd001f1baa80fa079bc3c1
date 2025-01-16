@@ -1,0 +1,11 @@
+package calsesObjetos;
+
+public class ejercicio1ClasesObjetos {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		cuentaCorriente cuenta1=new cuentaCorriente("Joel Costas",0,"12431812J");
+		cuenta1.ingresar("Joel", "12431812J", 100);
+	}
+
+}

@@ -1,0 +1,86 @@
+package calsesObjetos;
+
+import java.util.Scanner;
+
+public class pelicula {
+	public enum Genero {Acción,Aventura,Terror,Comedia}
+
+	
+	/*• Título
+• Director
+• Duración en minutos
+• Género. Es un dato de tipo enumerado, con los valores “Acción”, “Aventura”, “Terror” o 
+“Comedia”.
+*/
+	private String titulo;
+	private String director;
+	private int  duracion;
+	private Genero genero;
+	//private String genero={"Acción",Aventura,Terror,Comedia};
+	/*Un constructor con los parámetros título, director, duración en minutos y
+	género*/
+	public void parametros(String titulo,String director,int duracion,Genero genero) {
+		this.titulo=titulo;
+		this.director=director;
+		this.duracion=duracion;
+		this.genero=genero;
+	}
+	/* Un método para devolver cada uno de los atributos (cuatro métodos en total).*/
+	public void titulo() {
+		System.out.println(this.titulo);
+	}
+	public void director() {
+		System.out.println(this.director);
+	}
+	public void duracion() {
+		System.out.println(this.duracion);
+	}
+	public void genero() {
+		//System.out.println(this.genero);
+	}
+	/*Un método para cambiar el valor de cada uno de los atributos (cuatro métodos en total).
+*/
+	public void tituloCambiar() {
+		Scanner teclado=new Scanner (System.in);
+		System.out.println("Que titulo nuevo quieres poner para esta pelicula");
+		String titulo1=teclado.nextLine();
+		this.titulo=titulo1;
+		System.out.println("El titulo de la pelicula es: "+this.titulo);
+	}
+	public void directorCambiar() {
+		Scanner teclado=new Scanner (System.in);
+		System.out.println("Que director nuevo quieres poner para esta pelicula");
+		String director1=teclado.nextLine();
+		this.director=director1;
+		System.out.println("el director es: "+this.director);
+	}
+	public void duracionCambiar() {
+		Scanner teclado=new Scanner (System.in);
+		System.out.println("Que duracion nueva quieres poner para esta pelicula");
+		int duracion1=teclado.nextInt();
+		this.duracion=duracion1;
+		System.out.println("el director es: "+this.duracion);
+	}
+	public void generoCambiar() {
+		Scanner teclado=new Scanner (System.in);
+		System.out.println("Que genero quieres poner para esta pelicula");
+		int genero1=teclado.nextInt();
+		//this.genero=genero1;
+		//System.out.println("el director es: "+this.genero);
+	}
+	/*Un método que muestre la información por pantalla formateada de una
+manera adecuada. La duración de la película se mostrará en horas y minutos.
+Por ejemplo, para 95 minutos mostraría 1h 5min. (método toString())
+*/
+	public void infoPelicula() {
+		int horas=0;
+		int minutos=this.duracion;
+		while(minutos>60) {
+			horas=minutos/60;
+			minutos/=60*horas;
+			
+		}
+		
+		System.out.println("El titulo de la pelicula es:"+this.titulo+"\nEl director de la pelicula es:"+this.director+"\nLa pelicula dura:"+horas+" horas "+minutos+" minutos \nEl genero de la Pelicula es:"+this.genero);
+	}
+}

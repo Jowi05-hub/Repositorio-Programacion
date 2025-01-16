@@ -1,0 +1,39 @@
+package calsesObjetos;
+
+public class cuentaCorriente {
+	private String DNI;
+	private int saldo=0;
+	String nombre;
+	public cuentaCorriente(String DNI,String nombre) {
+		this.DNI=DNI;
+		this.nombre=nombre;
+	}
+	public String getDNI() {
+		return DNI;
+	}
+	public void setDNI(String dNI) {
+		DNI = dNI;
+	}
+	public int getSaldo() {
+		return saldo;
+	}
+	public void setSaldo(int saldo) {
+		this.saldo = saldo;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public void crearCuenta(String nombre,String DNI) {
+		System.out.println("la cuenta es de "+nombre+" con el DNI "+DNI);
+		this.saldo=0;
+		System.out.println("El saldo actual es de: "+this.saldo);
+	}
+	public void ingresar(String Nombre,String DNI,int ingreso) {
+		int saldoT=saldo+=ingreso;
+		System.out.println("Ahora la cuentacon nombre "+Nombre+" y DNI "+DNI+" tienen un saldo de "+saldoT);
+		saldo=saldoT;
+	}
+}

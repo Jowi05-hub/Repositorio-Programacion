@@ -1,0 +1,40 @@
+package main;
+
+import java.util.Scanner;
+
+public class ejercicio4Programacion {
+
+	public static void main(String[] args) {
+		
+			
+			ejercicio1(3,20);
+
+	}
+	/*Escribe una función que reciba dos enteros como parámetros y muestre todos los números comprendidos entre ellos.*/
+	public static void ejercicio1() {
+	 Scanner teclado=new Scanner (System.in);
+	 System.out.println("escribe un número");
+	 int num=teclado.nextInt();
+	 int num2=teclado.nextInt();
+ 
+ 	}
+	
+	 public static void ejercicio1(int num,int num2) {
+		 for(int i=0;num>i;i++) {
+			 System.out.println(i);
+		 }
+		 for(int i=0;num2>i;i++) {
+			 System.out.println(i);
+		 }
+	 }
+ 
+	 //privacidad (private, protected, nada, public)
+	 public static int funcionSuma(int a,int b) {
+		 
+		 return a+b;
+	 }
+	 public static int funcionX(String cadena) {
+		 return cadena.length();
+	 }
+}
+

@@ -1,0 +1,5 @@
+System.out.println("Escribe tu Edad");
+		Scanner Teclado=new Scanner(System.in);
+		int num=Teclado.nextInt();
+		int edad3=num+3;
+		System.out.println("Su edad dentro de 3 años es de: "+edad3);
