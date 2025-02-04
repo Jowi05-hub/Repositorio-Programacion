@@ -1,9 +1,0 @@
-package calsesObjetos;
-
-public class Principal {
-
-	public static void main(String[] args) {
-		Calendario Calendario1=new Calendario(31,3,2005);
-	}
-
-}
