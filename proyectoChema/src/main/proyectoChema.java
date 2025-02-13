@@ -161,27 +161,38 @@ Puedes codificar el nombre y el teléfono en una única cadena mediante “nombr
 			System.out.println("1-Añadir un nuevo contacto (con nombre y teléfono)");
 			System.out.println("2-Buscar un teléfono de un contacto a partir de un nombre.");
 			System.out.println("3-Mostrar la información de todos los contactos ordenados alfabéticamente por nombre.");
-			System.out.println("Introduce un numero");
+			System.out.println("Introduce un numero dentro del menu");
 			numero=teclado.nextInt();
+			teclado.nextLine();
 			switch(numero) {
 				case 1:
-						System.out.println("Añade un número de contacto con el Nombre y el Teléfono separado por :");
-						contactos=teclado.nextLine();
-						numeroContacto=Arrays.copyOf(numeroContacto, numeroContacto.length+1);
-						numeroContacto[numeroContacto.length]=contactos;
-						break;
+					numeroContacto=Arrays.copyOf(numeroContacto, numeroContacto.length+1);
+					System.out.println("Añade un número de contacto con el Nombre y el Teléfono separado por :");
+					contactos=teclado.nextLine();
+					for(int i=0;i<numeroContacto.length;i++) {
+						numeroContacto[i]=contactos;
+						System.out.println(numeroContacto[i]);
+					}
+					break;
 				case 2:
+					String[] nombre=contactos.split(":");
 					System.out.println("a quien quieres buscar");
 					quien=teclado.nextLine();
-					int comparacion=contactos.compareTo(quien);
-					if(comparacion==0) {
-						contactos.indexOf(quien);
+					teclado.nextLine();
+					boolean comparacion=nombre.equals(quien);
+					if(comparacion==true) {
+						//ñcontactos.indexOf(nombre);
 					}
 					break;
 				case 3:
 					Arrays.sort(numeroContacto);
-					System.out.println(numeroContacto);
+					System.out.println(numeroContacto.toString());
+					break;
+				default:
+					System.out.println("no esta dentro de las opciones del menu");
+					break;					
 			}
+
 		}while(numero!=-1);
 	}
 }
